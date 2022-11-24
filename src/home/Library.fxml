@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.BookController">
+   <children>
+      <ScrollPane layoutX="9.0" layoutY="179.0" prefHeight="540.0" prefWidth="1262.0">
+         <content>
+            <TilePane fx:id="tilePane" hgap="5.0" prefColumns="1" prefHeight="194.0" prefRows="1" prefWidth="1259.0" vgap="5.0" />
+         </content>
+      </ScrollPane>
+      <Label fx:id="welcomeLabel" alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="98.0" prefWidth="471.0" text="Welcome Librarian" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font>
+      </Label>
+      <TextField fx:id="search" layoutX="14.0" layoutY="129.0" prefHeight="31.0" prefWidth="388.0" promptText="Search by Title" />
+      <Button fx:id="searchBtn" layoutX="426.0" layoutY="127.0" mnemonicParsing="false" onAction="#searchBook" prefHeight="34.0" prefWidth="87.0" text="Search" />
+      <Button fx:id="addBtn" layoutX="1165.0" layoutY="119.0" mnemonicParsing="false" onAction="#addBook" prefHeight="34.0" prefWidth="87.0" text="Add" />
+      <Button fx:id="logoutBtn" layoutX="1165.0" layoutY="26.0" mnemonicParsing="false" onAction="#logOut" prefHeight="44.0" prefWidth="87.0" text="Logout" />
+      <Button fx:id="resetBtn" layoutX="532.0" layoutY="127.0" mnemonicParsing="false" onAction="#resetList" prefHeight="34.0" prefWidth="94.0" text="Reset" />
+      <Button fx:id="requestBtn" layoutX="640.0" layoutY="127.0" mnemonicParsing="false" onAction="#requestList" prefHeight="34.0" prefWidth="94.0" text="My Request" />
+      <Button fx:id="pendingBtn" layoutX="640.0" layoutY="127.0" mnemonicParsing="false" onAction="#pendingList" prefHeight="34.0" prefWidth="94.0" text="Pending List" />
+   </children>
+</AnchorPane>

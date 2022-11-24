@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="411.0" prefWidth="867.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="book.SingleBookController">
+   <children>
+      <ImageView fx:id="bookImg" fitHeight="389.0" fitWidth="259.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/images/placeholder.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="bookTitle" alignment="TOP_LEFT" layoutX="286.0" layoutY="31.0" prefHeight="42.0" prefWidth="259.0" text="Title" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="bookAuthor" layoutX="286.0" layoutY="77.0" prefHeight="49.0" prefWidth="186.0" text="Author" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="bookYear" layoutX="484.0" layoutY="74.0" prefHeight="50.0" prefWidth="94.0" text="Year" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="bookDescription" alignment="TOP_LEFT" layoutX="286.0" layoutY="135.0" prefHeight="222.0" prefWidth="468.0" text="Description" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Button fx:id="editBtn" layoutX="598.0" layoutY="14.0" mnemonicParsing="false" onAction="#editBook" prefHeight="42.0" prefWidth="62.0" text="Edit" />
+      <Button fx:id="deleteBtn" layoutX="690.0" layoutY="14.0" mnemonicParsing="false" onAction="#deleteBook" prefHeight="42.0" prefWidth="62.0" text="Delete" />
+      <Button layoutX="775.0" layoutY="336.0" mnemonicParsing="false" onAction="#back" prefHeight="42.0" prefWidth="79.0" text="Back" />
+      <Button fx:id="requestbtn" layoutX="776.0" layoutY="14.0" mnemonicParsing="false" onAction="#requestBook" prefHeight="42.0" prefWidth="79.0" text="Request" />
+      <Label layoutX="578.0" layoutY="84.0" prefHeight="34.0" prefWidth="44.0" text="Status:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="statusLabel" layoutX="629.0" layoutY="84.0" prefHeight="34.0" prefWidth="138.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="approveBtn" layoutX="772.0" layoutY="80.0" mnemonicParsing="false" onAction="#approveRequest" prefHeight="42.0" prefWidth="86.0" text="Approve" />
+      <Button fx:id="denyBtn" layoutX="772.0" layoutY="147.0" mnemonicParsing="false" onAction="#denyRequest" prefHeight="42.0" prefWidth="86.0" text="Deny" />
+      <Button fx:id="availableBtn" layoutX="775.0" layoutY="268.0" mnemonicParsing="false" onAction="#availableBook" prefHeight="42.0" prefWidth="79.0" text="Available" />
+      <Button fx:id="takenBtn" layoutX="775.0" layoutY="206.0" mnemonicParsing="false" onAction="#takenBook" prefHeight="42.0" prefWidth="79.0" text="Taken" />
+      <Label fx:id="userLabel" layoutX="429.0" layoutY="366.0" prefHeight="34.0" prefWidth="86.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="requestedbyLabel" layoutX="300.0" layoutY="366.0" prefHeight="34.0" prefWidth="128.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
