@@ -1,8 +1,57 @@
 
-#anchorPane{
-    -fx-background-image: url('../images/back.png');
+#anchorPane-login{
+    -fx-background-image: url('../images/library.jpg');
+    -fx-background-position: center;
+    -fx-background-size: contain; 
+}
+
+#anchorPane-library{
+    -fx-background-color: rgb(42, 41, 41);
+}
+
+#anchorPane-book{
+    -fx-background-color: rgb(42, 41, 41);
+}
+
+
+#scrollPane-library{
+    -fx-background: rgb(55, 54, 54);
+    -fx-border-color: rgba(55, 54, 54);
 }
 
 #login {
-    -fx-background-color: rgba(137, 137, 150, 0.427);
+    -fx-background-color: rgba(57, 57, 65, 0.685);
+}
+
+#addButton-library{
+    -fx-background-image: url('../images/addbutton.png');
+    -fx-background-position: center;
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+}
+
+#logoutButton-library{
+    -fx-background-image: url('../images/logoutButton.png');
+    -fx-background-position: center;
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+}
+
+#searchButton-library{
+    -fx-background-image: url('../images/searchButton.png');
+    -fx-background-position: center;
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+}
+
+#editButton-book{
+    -fx-background-image: url('../images/editButton.png');
+    -fx-background-position: center;
+    -fx-background-size: 100% 100%;
+}
+
+#deleteButton-book{
+    -fx-background-image: url('../images/deleteButton.png');
+    -fx-background-position: center;
+    -fx-background-size: 100% 100%;
 }

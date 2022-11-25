@@ -8,14 +8,14 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="690.0" stylesheets="@../resources/css/application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.LoginController">
+<AnchorPane id="anchorPane-login" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="690.0" stylesheets="@../resources/css/application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.LoginController">
    <children>
-      <Pane id="login" layoutX="89.0" layoutY="82.0" prefHeight="267.0" prefWidth="512.0" stylesheets="@../resources/css/application.css">
+      <Pane id="login" layoutX="178.0" layoutY="90.0" prefHeight="250.0" prefWidth="333.0" stylesheets="@../resources/css/application.css">
          <children>
-            <TextField fx:id="username" layoutX="100.0" layoutY="60.0" prefHeight="40.0" prefWidth="290.0" />
-            <PasswordField fx:id="password" layoutX="102.0" layoutY="119.0" prefHeight="40.0" prefWidth="290.0" />
-            <Button fx:id="loginBtn" layoutX="103.0" layoutY="185.0" mnemonicParsing="false" onAction="#Login" prefHeight="40.0" prefWidth="290.0" text="SIGN IN" />
-            <Label layoutX="219.0" layoutY="15.0" text="Login" textFill="WHITE">
+            <TextField fx:id="username" layoutX="24.0" layoutY="59.0" prefHeight="40.0" prefWidth="290.0" promptText="Username" />
+            <PasswordField fx:id="password" layoutX="24.0" layoutY="125.0" prefHeight="40.0" prefWidth="290.0" promptText="Password" />
+            <Button fx:id="loginBtn" layoutX="24.0" layoutY="186.0" mnemonicParsing="false" onAction="#Login" prefHeight="40.0" prefWidth="290.0" text="SIGN IN" />
+            <Label alignment="CENTER" layoutX="-6.0" layoutY="15.0" prefHeight="29.0" prefWidth="349.0" text="Welcome to Best Buddy Library" textFill="WHITE">
                <font>
                   <Font name="SansSerif Bold" size="20.0" />
                </font>

@@ -55,7 +55,7 @@ public class BookModel {
     //Search
     public ObservableList<BookData> searchBookList(String search){
         
-        String query = "SELECT * FROM book_tbl WHERE LOWER(title) LIKE ?";
+        String query = "SELECT * FROM book_tbl WHERE LOWER(title) LIKE ? ORDER BY title ASC";
         
         PreparedStatement statement = null;
 

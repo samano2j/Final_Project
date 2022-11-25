@@ -173,13 +173,19 @@ public class SingleBookController implements Initializable{
 
         dialog.showAndWait().ifPresent(response -> {
             if(response.getButtonData().equals(ButtonData.OK_DONE)){
-                singleBookModel.edit(bookData.getTitle(), bookData.getImage(), editTitle.getText(), editAuthor.getText(), editYear.getText(), editDescription.getText(), editImage.getText());
-                bookTitle.setText(editTitle.getText());
-                bookAuthor.setText(editAuthor.getText());
-                bookYear.setText(editYear.getText());
-                bookDescription.setText(editDescription.getText());
+                if (editTitle.getText().trim().isEmpty()) {editTitle.setText("No Title");}
+                if (editAuthor.getText().trim().isEmpty()) {editAuthor.setText("No Author");}
+                if (editYear.getText().trim().isEmpty()) {editYear.setText("0");}
+                if (!isInt(editYear.getText().trim())) {editYear.setText("0");}
+                if (editDescription.getText().trim().isEmpty()) {editDescription.setText("No Description");}
+                if (editImage.getText().trim().isEmpty()) {editImage.setText("placeholder.jpg");}
+                singleBookModel.edit(bookData.getTitle().trim(), bookData.getImage().trim(), editTitle.getText().trim(), editAuthor.getText().trim(), editYear.getText().trim(), editDescription.getText().trim(), editImage.getText().trim());
+                bookTitle.setText(editTitle.getText().trim());
+                bookAuthor.setText(editAuthor.getText().trim());
+                bookYear.setText(editYear.getText().trim());
+                bookDescription.setText(editDescription.getText().trim());
                 try {
-                    Image image = new Image(new FileInputStream("../Final_Project/src/resources/images/" + editImage.getText()));
+                    Image image = new Image(new FileInputStream("../Final_Project/src/resources/images/" + editImage.getText().trim()));
                     bookImg.setImage(image);
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
@@ -301,5 +307,16 @@ public class SingleBookController implements Initializable{
 
         dialog.getDialogPane().getButtonTypes().add(editModalBtn);
         dialog.getDialogPane().getButtonTypes().add(cancelModalBtn);
+    }
+
+    //check string if int
+    public boolean isInt(String string) {
+        int number;
+        try {
+            number = Integer.parseInt(string);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 }

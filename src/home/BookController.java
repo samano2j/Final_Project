@@ -115,7 +115,7 @@ public class BookController implements Initializable{
         if(status.equals("student")){
             addBtn.setVisible(false);
             addBtn.setDisable(true);
-            welcomeLabel.setText("Welcome Student!");
+            welcomeLabel.setText("Welcome " + data.getUser() +"!");
             pendingBtn.setVisible(false);
             pendingBtn.setDisable(true);
         } 
@@ -148,7 +148,13 @@ public class BookController implements Initializable{
         createaddModal();
         dialog.showAndWait().ifPresent(response -> {
             if(response.getButtonData().equals(ButtonData.OK_DONE)){
-                bookModel.addBook(addTitle.getText(), addAuthor.getText(), addYear.getText(), addDescription.getText(), addImage.getText());
+                if (addTitle.getText().trim().isEmpty()) {addTitle.setText("No Title");}
+                if (addAuthor.getText().trim().isEmpty()) {addAuthor.setText("No Author");}
+                if (addYear.getText().trim().isEmpty()) {addYear.setText("0");}
+                if (!isInt(addYear.getText())) {addYear.setText("0");}
+                if (addDescription.getText().trim().isEmpty()) {addDescription.setText("No Description");}
+                if (addImage.getText().trim().isEmpty()) {addImage.setText("placeholder.jpg");}
+                bookModel.addBook(addTitle.getText().trim(), addAuthor.getText().trim(), addYear.getText().trim(), addDescription.getText().trim(), addImage.getText().trim());
             }
         });
         tilePane.getChildren().clear();
@@ -220,21 +226,31 @@ public class BookController implements Initializable{
         gridPane.add(addImage, 1, 4);
 
         dialog.getDialogPane().setContent(gridPane);
-
         dialog.getDialogPane().getButtonTypes().add(addModalBtn);
         dialog.getDialogPane().getButtonTypes().add(cancelModalBtn);
+
     }
 
     public void loadBookList(ArrayList<BookData> bookList) {
         Image image =null;
         for (BookData bookData : bookList) {
+            FileInputStream imageData = null;
+            StackPane pane = new StackPane();
+
             try {
-                StackPane pane = new StackPane();
-                image = new Image(new FileInputStream("../Final_Project/src/resources/images/" + bookData.getImage()));
+                imageData = new FileInputStream("../Final_Project/src/resources/images/" + bookData.getImage());
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+                try {
+                    imageData = new FileInputStream("../Final_Project/src/resources/images/placeholder.jpg");
+                } catch (FileNotFoundException e1) {
+                    e1.printStackTrace();
+                }
+            }
+                image = new Image(imageData);
                 ImageView imageView = new ImageView(image);
                 imageView.setFitHeight(350); 
-                imageView.setFitWidth(300); 
-                imageView.setPreserveRatio(true);
+                imageView.setFitWidth(240); 
 
                 Rectangle rectangle = new Rectangle();
                 rectangle.setWidth(240);
@@ -263,10 +279,6 @@ public class BookController implements Initializable{
                 pane.getChildren().add(rectangle);
                 pane.getChildren().add(text);
                 tilePane.getChildren().add(pane);
-    
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
         }
     }
 
@@ -283,5 +295,16 @@ public class BookController implements Initializable{
             e.printStackTrace();
         }
 
+    }
+
+    //check string if int
+    public boolean isInt(String string) {
+        int number;
+        try {
+            number = Integer.parseInt(string);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 }
