@@ -23,7 +23,7 @@ public class BookModel {
     }
 
     public ObservableList<BookData> getBookList(){
-        String query = "SELECT * FROM book_tbl ORDER BY title ASC";
+        String query = "SELECT * FROM book_tbl ORDER BY LOWER(title) ASC";
 
         try {
             this.bookData = FXCollections.observableArrayList();
@@ -95,7 +95,7 @@ public class BookModel {
 
     //Request
     public ObservableList<BookData> requestBookList(String user){
-        String query = "SELECT * FROM book_tbl WHERE student = ?";
+        String query = "SELECT * FROM book_tbl WHERE student = ? ORDER BY LOWER(title) ASC";
         PreparedStatement statement = null;
 
         try {
@@ -135,7 +135,7 @@ public class BookModel {
     //Pending
     public ObservableList<BookData> pendingBookList(){
         
-        String query = "SELECT * FROM book_tbl WHERE availability = ?";
+        String query = "SELECT * FROM book_tbl WHERE availability = ? ORDER BY LOWER(title) ASC";
         
         PreparedStatement statement = null;
 

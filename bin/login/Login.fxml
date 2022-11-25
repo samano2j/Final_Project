@@ -10,7 +10,7 @@
 
 <AnchorPane id="anchorPane-login" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="690.0" stylesheets="@../resources/css/application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.LoginController">
    <children>
-      <Pane id="login" layoutX="178.0" layoutY="90.0" prefHeight="250.0" prefWidth="333.0" stylesheets="@../resources/css/application.css">
+      <Pane id="login" layoutX="178.0" layoutY="90.0" prefHeight="274.0" prefWidth="334.0" stylesheets="@../resources/css/application.css">
          <children>
             <TextField fx:id="username" layoutX="24.0" layoutY="59.0" prefHeight="40.0" prefWidth="290.0" promptText="Username" />
             <PasswordField fx:id="password" layoutX="24.0" layoutY="125.0" prefHeight="40.0" prefWidth="290.0" promptText="Password" />
@@ -20,7 +20,7 @@
                   <Font name="SansSerif Bold" size="20.0" />
                </font>
             </Label>
-            <Label fx:id="loginStatus" layoutX="112.0" layoutY="239.0" prefHeight="16.0" prefWidth="268.0" textFill="WHITE">
+            <Label fx:id="loginStatus" layoutX="35.0" layoutY="244.0" prefHeight="16.0" prefWidth="268.0" textFill="WHITE">
                <font>
                   <Font name="SansSerif Bold" size="13.0" />
                </font>
